@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer Prediction System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        .form-container {
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 20px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+        }
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        .result {
+            font-size: 1.5em;
+            color: #4CAF50;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Lung Cancer Prediction System</h2>
+        <form action="/predict" method="post">
+            <label for="gender">Gender (1: Male, 2: Female):</label>
+            <input type="number" name="gender" required>
+            
+            <label for="age">Age:</label>
+            <input type="number" name="age" required>
+            
+            <label for="smoking">Smoking (0: No, 1: Yes):</label>
+            <input type="number" name="smoking" required>
+            
+            <label for="yellow_fingers">Yellow Fingers (0: No, 1: Yes):</label>
+            <input type="number" name="yellow_fingers" required>
+            
+            <label for="anxiety">Anxiety (0: No, 1: Yes):</label>
+            <input type="number" name="anxiety" required>
+            
+            <label for="peer_pressure">Peer Pressure (0: No, 1: Yes):</label>
+            <input type="number" name="peer_pressure" required>
+            
+            <label for="chronic_disease">Chronic Disease (0: No, 1: Yes):</label>
+            <input type="number" name="chronic_disease" required>
+            
+            <label for="fatigue">Fatigue (0: No, 1: Yes):</label>
+            <input type="number" name="fatigue" required>
+            
+            <label for="allergy">Allergy (0: No, 1: Yes):</label>
+            <input type="number" name="allergy" required>
+            
+            <label for="wheezing">Wheezing (0: No, 1: Yes):</label>
+            <input type="number" name="wheezing" required>
+            
+            <label for="alcohol_consuming">Alcohol Consuming (0: No, 1: Yes):</label>
+            <input type="number" name="alcohol_consuming" required>
+            
+            <label for="coughing">Coughing (0: No, 1: Yes):</label>
+            <input type="number" name="coughing" required>
+            
+            <label for="shortness_of_breath">Shortness of Breath (0: No, 1: Yes):</label>
+            <input type="number" name="shortness_of_breath" required>
+            
+            <label for="swallowing_difficulty">Swallowing Difficulty (0: No, 1: Yes):</label>
+            <input type="number" name="swallowing_difficulty" required>
+            
+            <label for="chest_pain">Chest Pain (0: No, 1: Yes):</label>
+            <input type="number" name="chest_pain" required>
+            
+            <input type="submit" value="Submit">
+        </form>
+        
+        {% if prediction_text %}
+        <div class="result">{{ prediction_text }}</div>
+        {% endif %}
+    </div>
+</body>
+</html>
